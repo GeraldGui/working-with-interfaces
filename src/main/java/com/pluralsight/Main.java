@@ -20,6 +20,9 @@ public class Main {
                 compare = person;
             }
         }
-        System.out.println(compare);
+        Collections.sort(myFamily);
+        for (Person person : myFamily) {
+            System.out.println(person);
+        }
     }
 }

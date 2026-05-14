@@ -1,8 +1,6 @@
 package com.pluralsight;
 
-import com.pluralsight.interfaces.Compareable;
-
-public class Person implements Compareable<Person> {
+public class Person implements Comparable<Person> {
     private String firstName;
     private String lastName;
     private int age;
@@ -15,13 +13,16 @@ public class Person implements Compareable<Person> {
 
     @Override
     public int compareTo(Person o) {
-        if (this.age > o.age) {
+        int last = this.lastName.compareTo(o.lastName);
+        return last == 0 ? this.firstName.compareTo(o.firstName) : last;
+
+        /*if (this.age > o.age) {
             return 1;
         } else if(this.age < o.age) {
             return -1;
         } else {
             return 0;
-        }
+        }*/
     }
 
     @Override
