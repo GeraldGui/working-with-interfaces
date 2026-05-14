@@ -1,5 +1,7 @@
 package com.pluralsight.interfaces;
 
-public interface Compareable {
+import java.util.Comparator;
+
+public interface Compareable<T>{
     int compareTo(T o);
 }
